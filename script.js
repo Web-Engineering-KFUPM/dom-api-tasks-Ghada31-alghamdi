@@ -72,6 +72,26 @@ Use:
 data.content   // the quote text
 data.author    // the author
 */
+const button2 =document.getElementById("t3-loadQuote");
+const content=document.getElementById("t3-quote")
+const author=document.getElementById("t3-author")
+button2.addEventListener("click", function (){
+fetch("https://dummyjson.com/quotes/random")
+  .then(function (response) {
+    if (!response.ok) {      
+      throw new Error("HTTP " + response.status);
+    }
+    return response.json();           
+  })
+  .then(function (data) {
+    content.innerHTML=data.quote;
+    author.innerHTML=data.author;
+  })
+  .catch(function (err) {
+    content.innerHTML="Sorry we have an error"
+  });
+
+});
  
 
 /*  
@@ -98,3 +118,4 @@ data.main.temp      → temperature (°C)
 data.main.humidity  → humidity (%)
 data.wind.speed     → wind speed (m/s)
 */
+
