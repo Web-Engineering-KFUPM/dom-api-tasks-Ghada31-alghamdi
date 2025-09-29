@@ -41,6 +41,10 @@ button.addEventListener("click", function () {
     // change text here
 });
 */
+const button1 =document.getElementById("t2-btn");
+button1.addEventListener("click", function (){
+    document.getElementById("t2-status").innerHTML="Hello This is Ghada";
+});
 
 /*  
 =======================================
